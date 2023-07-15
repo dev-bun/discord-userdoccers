@@ -82,22 +82,22 @@ Type `10`, `11` and `12` are only available in API v9 and above.
 
 ###### Channel Flags
 
-| Value       | Name                                       | Description                                                                                            |
-| ----------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| 1 << 0      | GUILD_FEED_REMOVED                         | This guild channel has been removed from the guild's feed                                              |
-| 1 << 1      | PINNED                                     | This thread is pinned to the top of its parent thread-only channel                                     |
-| 1 << 2      | ACTIVE_CHANNELS_REMOVED                    | This guild channel has been removed from the guild's active channels                                   |
-| 1 << 4      | REQUIRE_TAG                                | This thread-only channel requires a tag to create threads in                                           |
-| 1 << 5      | SPAM                                       | This channel is marked as spam                                                                         |
-| 1 << 7      | GUILD_RESOURCE_CHANNEL                     | This guild channel is used as a read-only resource for onboarding and is not shown in the channel list |
-| 1 << 8      | CLYDE_AI                                   | This thread is created by Clyde AI, which has full access to all message content                       |
-| 1 << 9      | SCHEDULED_FOR_DELETION                     | This guild channel is scheduled for deletion and is not shown in the UI                                |
-| ~~1 << 10~~ | ~~MEDIA_CHANNEL~~                          | ~~This forum channel is a media channel~~                                                              |
-| 1 << 11     | SUMMARIES_DISABLED                         | This guild channel has summaries disabled                                                              |
-| ~~1 << 12~~ | ~~APPLICATION_SHELF_CONSENT~~              | ~~This private channel's recipients consented to the application shelf~~                               |
-| 1 << 13     | ROLE_SUBSCRIPTION_TEMPLATE_PREVIEW_CHANNEL | This role subscription tier for this guild channel has not been published yet                          |
-| 1 << 14     | BROADCASTING                               | This group DM is used for broadcasting a live stream                                                   |
-| 1 << 15     | HIDE_MEDIA_DOWNLOAD_OPTIONS                | This media channel has the embedded download options hidden for media attachments                      |
+| Value             | Name                                       | Description                                                                                            |
+| ----------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| 1 &lt;&lt; 0      | GUILD_FEED_REMOVED                         | This guild channel has been removed from the guild's feed                                              |
+| 1 &lt;&lt; 1      | PINNED                                     | This thread is pinned to the top of its parent thread-only channel                                     |
+| 1 &lt;&lt; 2      | ACTIVE_CHANNELS_REMOVED                    | This guild channel has been removed from the guild's active channels                                   |
+| 1 &lt;&lt; 4      | REQUIRE_TAG                                | This thread-only channel requires a tag to create threads in                                           |
+| 1 &lt;&lt; 5      | SPAM                                       | This channel is marked as spam                                                                         |
+| 1 &lt;&lt; 7      | GUILD_RESOURCE_CHANNEL                     | This guild channel is used as a read-only resource for onboarding and is not shown in the channel list |
+| 1 &lt;&lt; 8      | CLYDE_AI                                   | This thread is created by Clyde AI, which has full access to all message content                       |
+| 1 &lt;&lt; 9      | SCHEDULED_FOR_DELETION                     | This guild channel is scheduled for deletion and is not shown in the UI                                |
+| ~~1 &lt;&lt; 10~~ | ~~MEDIA_CHANNEL~~                          | ~~This forum channel is a media channel~~                                                              |
+| 1 &lt;&lt; 11     | SUMMARIES_DISABLED                         | This guild channel has summaries disabled                                                              |
+| ~~1 &lt;&lt; 12~~ | ~~APPLICATION_SHELF_CONSENT~~              | ~~This private channel's recipients consented to the application shelf~~                               |
+| 1 &lt;&lt; 13     | ROLE_SUBSCRIPTION_TEMPLATE_PREVIEW_CHANNEL | This role subscription tier for this guild channel has not been published yet                          |
+| 1 &lt;&lt; 14     | BROADCASTING                               | This group DM is used for broadcasting a live stream                                                   |
+| 1 &lt;&lt; 15     | HIDE_MEDIA_DOWNLOAD_OPTIONS                | This media channel has the embedded download options hidden for media attachments                      |
 
 ###### Video Quality Mode
 
@@ -463,12 +463,12 @@ A thread member object contains information about a user that has joined a threa
 
 ###### Thread Member Flags
 
-| Value  | Name           | Description                                                          |
-| ------ | -------------- | -------------------------------------------------------------------- |
-| 1 << 0 | HAS_INTERACTED | The user has interacted with the thread                              |
-| 1 << 1 | ALL_MESSAGES   | The user receives notifications for all messages                     |
-| 1 << 2 | ONLY_MENTIONS  | The user receives notifications only for messages that @mention them |
-| 1 << 3 | NO_MESSAGES    | The user does not receive any notifications                          |
+| Value        | Name           | Description                                                          |
+| ------------ | -------------- | -------------------------------------------------------------------- |
+| 1 &lt;&lt; 0 | HAS_INTERACTED | The user has interacted with the thread                              |
+| 1 &lt;&lt; 1 | ALL_MESSAGES   | The user receives notifications for all messages                     |
+| 1 &lt;&lt; 2 | ONLY_MENTIONS  | The user receives notifications only for messages that @mention them |
+| 1 &lt;&lt; 3 | NO_MESSAGES    | The user does not receive any notifications                          |
 
 ### Default Reaction Object
 

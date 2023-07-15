@@ -226,21 +226,21 @@ The effects of specific capabilities are documented in the [Gateway events](/top
 
 Below is a list of all capabilities and a general description of their effects. For more information, see the documentation for the specific event or feature that is affected.
 
-| Value   | Name                                  | Description                                                                                                                                                                                                                                                                                                                                                         |
-| ------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 << 0  | LAZY_USER_NOTES                       | Removes the `notes` field from the [Ready](/topics/gateway-events#ready) event,                                                                                                                                                                                                                                                                                     |
-| 1 << 1  | NO_AFFINE_USER_IDS                    | Prevents member/presence syncing and [Presence Update](/topics/gateway-events#presence-update) events for [implicit relationships](/resources/user#relationship-object)                                                                                                                                                                                             |
-| 1 << 2  | VERSIONED_READ_STATES                 | Enables versioned read states, changing the `read_state` field in the [Ready](/topics/gateway-events#ready) event to an object, allowing it to be cached when re-identifying                                                                                                                                                                                        |
-| 1 << 3  | VERSIONED_USER_GUILD_SETTINGS         | Enables versioned user guild settings, changing the `user_guild_settings` field in the [Ready](/topics/gateway-events#ready) event to an object, allowing it to be cached when re-identifying                                                                                                                                                                       |
-| 1 << 4  | DEDUPE_USER_OBJECTS                   | Dehydrates the [Ready](/topics/gateway-events#ready) payload, moving all user objects to the `users` field and replacing them in various places in the payload with `user_id` or `recipient_id`, and merging the `members` fields of all guilds into a single `merged_members` field                                                                                |
-| 1 << 5  | PRIORITIZED_READY_PAYLOAD             | Separates the [Ready](/topics/gateway-events#ready) payload into two parts ([Ready](/topics/gateway-events#ready) and [Ready Supplemental](/topics/gateway-events#ready-supplemental)) allowing the client to receive the [Ready](/topics/gateway-events#ready) payload faster and then receive the rest of the payload later; **depends on `DEDUPE_USER_OBJECTS`** |
-| 1 << 6  | MULTIPLE_GUILD_EXPERIMENT_POPULATIONS | Changes the `populations` entry of [`guild_experiments`](/topics/experiments#guild-experiments) in the [Ready](/topics/gateway-events#ready) event to be an array of populations rather than a single population                                                                                                                                                    |
-| 1 << 7  | NON_CHANNEL_READ_STATES               | Includes read states tied to non-channel resources (e.g. guild scheduled events and notification center) in the `read_states` field of the [Ready](/topics/gateway-events#ready) event                                                                                                                                                                              |
-| 1 << 8  | AUTH_TOKEN_REFRESH                    | Enables auth token refresh, allowing the client to optionally receive a new auth token in the `auth_token` field of the [Ready](/topics/gateway-events#ready) event                                                                                                                                                                                                 |
-| 1 << 9  | USER_SETTINGS_PROTO                   | Removes the `user_settings` field from the [Ready](/topics/gateway-events#ready) event, and prevents [User Settings Update](/topics/gateway-events#user-settings-update) events; the `user_settings_proto` field and [User Settings Proto Update](/topics/gateway-events#user-settings-proto-update) event is used instead                                          |
-| 1 << 10 | CLIENT_STATE_V2                       | Enables client state caching v2                                                                                                                                                                                                                                                                                                                                     |
-| 1 << 11 | PASSIVE_GUILD_UPDATE                  | Enables passive guild updates, allowing the client to receive [Passive Update v1](/topics/gateway-events#passive-update-v1) events instead of [Channel Unreads Update](/topics/gateway-events#channel-unreads-update) events for guilds it is not subscribed to                                                                                                     |
-| 1 << 12 | UNKNOWN                               | This enum value is not known                                                                                                                                                                                                                                                                                                                                        |
+| Value         | Name                                  | Description                                                                                                                                                                                                                                                                                                                                                         |
+| ------------- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1 &lt;&lt; 0  | LAZY_USER_NOTES                       | Removes the `notes` field from the [Ready](/topics/gateway-events#ready) event,                                                                                                                                                                                                                                                                                     |
+| 1 &lt;&lt; 1  | NO_AFFINE_USER_IDS                    | Prevents member/presence syncing and [Presence Update](/topics/gateway-events#presence-update) events for [implicit relationships](/resources/user#relationship-object)                                                                                                                                                                                             |
+| 1 &lt;&lt; 2  | VERSIONED_READ_STATES                 | Enables versioned read states, changing the `read_state` field in the [Ready](/topics/gateway-events#ready) event to an object, allowing it to be cached when re-identifying                                                                                                                                                                                        |
+| 1 &lt;&lt; 3  | VERSIONED_USER_GUILD_SETTINGS         | Enables versioned user guild settings, changing the `user_guild_settings` field in the [Ready](/topics/gateway-events#ready) event to an object, allowing it to be cached when re-identifying                                                                                                                                                                       |
+| 1 &lt;&lt; 4  | DEDUPE_USER_OBJECTS                   | Dehydrates the [Ready](/topics/gateway-events#ready) payload, moving all user objects to the `users` field and replacing them in various places in the payload with `user_id` or `recipient_id`, and merging the `members` fields of all guilds into a single `merged_members` field                                                                                |
+| 1 &lt;&lt; 5  | PRIORITIZED_READY_PAYLOAD             | Separates the [Ready](/topics/gateway-events#ready) payload into two parts ([Ready](/topics/gateway-events#ready) and [Ready Supplemental](/topics/gateway-events#ready-supplemental)) allowing the client to receive the [Ready](/topics/gateway-events#ready) payload faster and then receive the rest of the payload later; **depends on `DEDUPE_USER_OBJECTS`** |
+| 1 &lt;&lt; 6  | MULTIPLE_GUILD_EXPERIMENT_POPULATIONS | Changes the `populations` entry of [`guild_experiments`](/topics/experiments#guild-experiments) in the [Ready](/topics/gateway-events#ready) event to be an array of populations rather than a single population                                                                                                                                                    |
+| 1 &lt;&lt; 7  | NON_CHANNEL_READ_STATES               | Includes read states tied to non-channel resources (e.g. guild scheduled events and notification center) in the `read_states` field of the [Ready](/topics/gateway-events#ready) event                                                                                                                                                                              |
+| 1 &lt;&lt; 8  | AUTH_TOKEN_REFRESH                    | Enables auth token refresh, allowing the client to optionally receive a new auth token in the `auth_token` field of the [Ready](/topics/gateway-events#ready) event                                                                                                                                                                                                 |
+| 1 &lt;&lt; 9  | USER_SETTINGS_PROTO                   | Removes the `user_settings` field from the [Ready](/topics/gateway-events#ready) event, and prevents [User Settings Update](/topics/gateway-events#user-settings-update) events; the `user_settings_proto` field and [User Settings Proto Update](/topics/gateway-events#user-settings-proto-update) event is used instead                                          |
+| 1 &lt;&lt; 10 | CLIENT_STATE_V2                       | Enables client state caching v2                                                                                                                                                                                                                                                                                                                                     |
+| 1 &lt;&lt; 11 | PASSIVE_GUILD_UPDATE                  | Enables passive guild updates, allowing the client to receive [Passive Update v1](/topics/gateway-events#passive-update-v1) events instead of [Channel Unreads Update](/topics/gateway-events#channel-unreads-update) events for guilds it is not subscribed to                                                                                                     |
+| 1 &lt;&lt; 12 | UNKNOWN                               | This enum value is not known                                                                                                                                                                                                                                                                                                                                        |
 
 ## Gateway Intents
 
@@ -252,7 +252,7 @@ For bots, intents are optionally supported on the v6 API but required as of v8. 
 
 Maintaining a stateful application can be difficult when it comes to the amount of data you're expected to process over a Gateway connection, especially at scale. Gateway intents are a system to help you lower the computational burden.
 
-Intents are bitwise values passed in the `intents` parameter when [identifying](#identifying) which correlate to a set of related events. For example, the event sent when a guild is created ([Guild Create](/topics/gateway-events#guild-create)) and when a channel is updated ([Channel Update](/topics/gateway-events#channel-update)) both require the same `GUILDS (1 << 0)` intent (as listed in the table below). If you do not specify an intent when identifying, you will not receive _any_ of the Gateway events associated with that intent.
+Intents are bitwise values passed in the `intents` parameter when [identifying](#identifying) which correlate to a set of related events. For example, the event sent when a guild is created ([Guild Create](/topics/gateway-events#guild-create)) and when a channel is updated ([Channel Update](/topics/gateway-events#channel-update)) both require the same `GUILDS (1 &lt;&lt; 0)` intent (as listed in the table below). If you do not specify an intent when identifying, you will not receive _any_ of the Gateway events associated with that intent.
 
 For bots, two types of intents exist:
 
@@ -268,7 +268,7 @@ Below is a list of all intents and the Gateway events associated with them. Any 
 All events, including those that aren't associated with an intent, are in the [Gateway events](/topics/gateway-events) documentation.
 
 ```
-GUILDS (1 << 0)
+GUILDS (1 &lt;&lt; 0)
   - GUILD_CREATE
   - GUILD_UPDATE
   - GUILD_DELETE
@@ -289,85 +289,85 @@ GUILDS (1 << 0)
   - STAGE_INSTANCE_UPDATE
   - STAGE_INSTANCE_DELETE
 
-GUILD_MEMBERS (1 << 1)
+GUILD_MEMBERS (1 &lt;&lt; 1)
   - GUILD_MEMBER_ADD
   - GUILD_MEMBER_UPDATE
   - GUILD_MEMBER_REMOVE
   - THREAD_MEMBERS_UPDATE ¹
 
-GUILD_MODERATION (1 << 2)
+GUILD_MODERATION (1 &lt;&lt; 2)
   - GUILD_AUDIT_LOG_ENTRY_CREATE
   - GUILD_BAN_ADD
   - GUILD_BAN_REMOVE
 
-GUILD_EMOJIS_AND_STICKERS (1 << 3)
+GUILD_EMOJIS_AND_STICKERS (1 &lt;&lt; 3)
   - GUILD_EMOJIS_UPDATE
   - GUILD_STICKERS_UPDATE
 
-GUILD_INTEGRATIONS (1 << 4)
+GUILD_INTEGRATIONS (1 &lt;&lt; 4)
   - GUILD_INTEGRATIONS_UPDATE
   - INTEGRATION_CREATE
   - INTEGRATION_UPDATE
   - INTEGRATION_DELETE
 
-GUILD_WEBHOOKS (1 << 5)
+GUILD_WEBHOOKS (1 &lt;&lt; 5)
   - WEBHOOKS_UPDATE
 
-GUILD_INVITES (1 << 6)
+GUILD_INVITES (1 &lt;&lt; 6)
   - INVITE_CREATE
   - INVITE_DELETE
 
-GUILD_VOICE_STATES (1 << 7)
+GUILD_VOICE_STATES (1 &lt;&lt; 7)
   - VOICE_STATE_UPDATE
 
-GUILD_PRESENCES (1 << 8) ²
+GUILD_PRESENCES (1 &lt;&lt; 8) ²
   - PRESENCE_UPDATE
 
-GUILD_MESSAGES (1 << 9)
+GUILD_MESSAGES (1 &lt;&lt; 9)
   - MESSAGE_CREATE
   - MESSAGE_UPDATE
   - MESSAGE_DELETE
   - MESSAGE_DELETE_BULK
 
-GUILD_MESSAGE_REACTIONS (1 << 10)
+GUILD_MESSAGE_REACTIONS (1 &lt;&lt; 10)
   - MESSAGE_REACTION_ADD
   - MESSAGE_REACTION_REMOVE
   - MESSAGE_REACTION_REMOVE_ALL
   - MESSAGE_REACTION_REMOVE_EMOJI
 
-GUILD_MESSAGE_TYPING (1 << 11)
+GUILD_MESSAGE_TYPING (1 &lt;&lt; 11)
   - TYPING_START
 
-DIRECT_MESSAGES (1 << 12)
+DIRECT_MESSAGES (1 &lt;&lt; 12)
   - MESSAGE_CREATE
   - MESSAGE_UPDATE
   - MESSAGE_DELETE
   - CHANNEL_PINS_UPDATE
 
-DIRECT_MESSAGE_REACTIONS (1 << 13)
+DIRECT_MESSAGE_REACTIONS (1 &lt;&lt; 13)
   - MESSAGE_REACTION_ADD
   - MESSAGE_REACTION_REMOVE
   - MESSAGE_REACTION_REMOVE_ALL
   - MESSAGE_REACTION_REMOVE_EMOJI
 
-DIRECT_MESSAGE_TYPING (1 << 14)
+DIRECT_MESSAGE_TYPING (1 &lt;&lt; 14)
   - TYPING_START
 
-MESSAGE_CONTENT (1 << 15) ³
+MESSAGE_CONTENT (1 &lt;&lt; 15) ³
 
-GUILD_SCHEDULED_EVENTS (1 << 16)
+GUILD_SCHEDULED_EVENTS (1 &lt;&lt; 16)
   - GUILD_SCHEDULED_EVENT_CREATE
   - GUILD_SCHEDULED_EVENT_UPDATE
   - GUILD_SCHEDULED_EVENT_DELETE
   - GUILD_SCHEDULED_EVENT_USER_ADD
   - GUILD_SCHEDULED_EVENT_USER_REMOVE
 
-AUTO_MODERATION_CONFIGURATION (1 << 20)
+AUTO_MODERATION_CONFIGURATION (1 &lt;&lt; 20)
   - AUTO_MODERATION_RULE_CREATE
   - AUTO_MODERATION_RULE_UPDATE
   - AUTO_MODERATION_RULE_DELETE
 
-AUTO_MODERATION_EXECUTION (1 << 21)
+AUTO_MODERATION_EXECUTION (1 &lt;&lt; 21)
   - AUTO_MODERATION_ACTION_EXECUTION
 ```
 
@@ -421,7 +421,7 @@ HTTP API restrictions are independent of Gateway restrictions, and are unaffecte
 
 #### Message Content Intent
 
-`MESSAGE_CONTENT (1 << 15)` is a unique privileged intent that isn't directly associated with any Gateway events. Instead, access to `MESSAGE_CONTENT` permits users to receive message content data across the APIs.
+`MESSAGE_CONTENT (1 &lt;&lt; 15)` is a unique privileged intent that isn't directly associated with any Gateway events. Instead, access to `MESSAGE_CONTENT` permits users to receive message content data across the APIs.
 
 While user accounts can also toggle the `MESSAGE_CONTENT` intent, they are not subject to the same restrictions as bots. User accounts do not have the concept of privileged intents, and therefore do not need to be approved for the intent. Additionally, user accounts must explicitly toggle on the intent in all API versions if they are utilizing intents.
 

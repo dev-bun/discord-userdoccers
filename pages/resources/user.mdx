@@ -165,53 +165,53 @@ For users with migrated accounts, default avatar URLs will be based on the user 
 
 ###### User Flags
 
-| Value   | Name                       | Description                                                                                 | Public |
-| ------- | -------------------------- | ------------------------------------------------------------------------------------------- | ------ |
-| 1 << 0  | STAFF                      | Discord Staff                                                                               | Yes    |
-| 1 << 1  | PARTNER                    | Partnered Server Owner                                                                      | Yes    |
-| 1 << 2  | HYPESQUAD                  | HypeSquad Events                                                                            | Yes    |
-| 1 << 3  | BUG_HUNTER_LEVEL_1         | Level 1 Discord Bug Hunter                                                                  | Yes    |
-| 1 << 4  | MFA_SMS                    | SMS enabled as a two-factor authentication backup                                           | No     |
-| 1 << 5  | PREMIUM_PROMO_DISMISSED    | User has dismissed the current premium (Nitro) promotion                                    | No     |
-| 1 << 6  | HYPESQUAD_ONLINE_HOUSE_1   | HypeSquad Bravery                                                                           | Yes    |
-| 1 << 7  | HYPESQUAD_ONLINE_HOUSE_2   | HypeSquad Brilliance                                                                        | Yes    |
-| 1 << 8  | HYPESQUAD_ONLINE_HOUSE_3   | HypeSquad Balance                                                                           | Yes    |
-| 1 << 9  | PREMIUM_EARLY_SUPPORTER    | Early Premium (Nitro) Supporter                                                             | Yes    |
-| 1 << 10 | TEAM_PSEUDO_USER           | User is a [Team](#topics/teams)                                                             | Yes    |
-| 1 << 11 | INTERNAL_APPLICATION       | User has a pending partner or bot verification application                                  | No     |
-| 1 << 12 | SYSTEM                     | User is a system user (i.e. official Discord account)                                       | Yes    |
-| 1 << 13 | HAS_UNREAD_URGENT_MESSAGES | User has unread urgent system messages; an urgent message is one sent from Trust and Safety | No     |
-| 1 << 14 | BUG_HUNTER_LEVEL_2         | Level 2 Discord Bug Hunter                                                                  | Yes    |
-| 1 << 15 | UNDERAGE_DELETED           | User is scheduled for deletion for being under the minimum required age                     | No     |
-| 1 << 16 | VERIFIED_BOT               | Verified Bot                                                                                | Yes    |
-| 1 << 17 | VERIFIED_DEVELOPER         | Early Verified Bot Developer                                                                | Yes    |
-| 1 << 18 | CERTIFIED_MODERATOR        | Moderator Programs Alumni                                                                   | Yes    |
-| 1 << 19 | BOT_HTTP_INTERACTIONS      | Bot uses only HTTP interactions and is shown in the online member list                      | Yes    |
-| 1 << 20 | SPAMMER                    | User is marked as a spammer and has their messages collapsed in the UI                      | Yes    |
-| 1 << 21 | DISABLE_PREMIUM            | User has manually disabled premium (Nitro) features                                         | No     |
-| 1 << 22 | ACTIVE_DEVELOPER           | [Active Developer](https://support-dev.discord.com/hc/articles/10113997751447)              | Yes    |
-| 1 << 44 | QUARANTINED                | User is quarantined and cannot create DMs or accept invites                                 | No     |
+| Value         | Name                       | Description                                                                                 | Public |
+| ------------- | -------------------------- | ------------------------------------------------------------------------------------------- | ------ |
+| 1 &lt;&lt; 0  | STAFF                      | Discord Staff                                                                               | Yes    |
+| 1 &lt;&lt; 1  | PARTNER                    | Partnered Server Owner                                                                      | Yes    |
+| 1 &lt;&lt; 2  | HYPESQUAD                  | HypeSquad Events                                                                            | Yes    |
+| 1 &lt;&lt; 3  | BUG_HUNTER_LEVEL_1         | Level 1 Discord Bug Hunter                                                                  | Yes    |
+| 1 &lt;&lt; 4  | MFA_SMS                    | SMS enabled as a two-factor authentication backup                                           | No     |
+| 1 &lt;&lt; 5  | PREMIUM_PROMO_DISMISSED    | User has dismissed the current premium (Nitro) promotion                                    | No     |
+| 1 &lt;&lt; 6  | HYPESQUAD_ONLINE_HOUSE_1   | HypeSquad Bravery                                                                           | Yes    |
+| 1 &lt;&lt; 7  | HYPESQUAD_ONLINE_HOUSE_2   | HypeSquad Brilliance                                                                        | Yes    |
+| 1 &lt;&lt; 8  | HYPESQUAD_ONLINE_HOUSE_3   | HypeSquad Balance                                                                           | Yes    |
+| 1 &lt;&lt; 9  | PREMIUM_EARLY_SUPPORTER    | Early Premium (Nitro) Supporter                                                             | Yes    |
+| 1 &lt;&lt; 10 | TEAM_PSEUDO_USER           | User is a [Team](#topics/teams)                                                             | Yes    |
+| 1 &lt;&lt; 11 | INTERNAL_APPLICATION       | User has a pending partner or bot verification application                                  | No     |
+| 1 &lt;&lt; 12 | SYSTEM                     | User is a system user (i.e. official Discord account)                                       | Yes    |
+| 1 &lt;&lt; 13 | HAS_UNREAD_URGENT_MESSAGES | User has unread urgent system messages; an urgent message is one sent from Trust and Safety | No     |
+| 1 &lt;&lt; 14 | BUG_HUNTER_LEVEL_2         | Level 2 Discord Bug Hunter                                                                  | Yes    |
+| 1 &lt;&lt; 15 | UNDERAGE_DELETED           | User is scheduled for deletion for being under the minimum required age                     | No     |
+| 1 &lt;&lt; 16 | VERIFIED_BOT               | Verified Bot                                                                                | Yes    |
+| 1 &lt;&lt; 17 | VERIFIED_DEVELOPER         | Early Verified Bot Developer                                                                | Yes    |
+| 1 &lt;&lt; 18 | CERTIFIED_MODERATOR        | Moderator Programs Alumni                                                                   | Yes    |
+| 1 &lt;&lt; 19 | BOT_HTTP_INTERACTIONS      | Bot uses only HTTP interactions and is shown in the online member list                      | Yes    |
+| 1 &lt;&lt; 20 | SPAMMER                    | User is marked as a spammer and has their messages collapsed in the UI                      | Yes    |
+| 1 &lt;&lt; 21 | DISABLE_PREMIUM            | User has manually disabled premium (Nitro) features                                         | No     |
+| 1 &lt;&lt; 22 | ACTIVE_DEVELOPER           | [Active Developer](https://support-dev.discord.com/hc/articles/10113997751447)              | Yes    |
+| 1 &lt;&lt; 44 | QUARANTINED                | User is quarantined and cannot create DMs or accept invites                                 | No     |
 
 ###### Purchased Flags
 
 Purchased flags denote what premium items a user has ever purchased. Visit the [Nitro](https://discord.com/nitro) page to learn more about the premium plans currently offered.
 
-| Value  | Name          | Description                          |
-| ------ | ------------- | ------------------------------------ |
-| 1 << 0 | NITRO_CLASSIC | The user has purchased Nitro classic |
-| 1 << 1 | NITRO         | The user has purchased regular Nitro |
-| 1 << 2 | GUILD_BOOST   | The user has purchased a guild boost |
-| 1 << 3 | NITRO_BASIC   | The user has purchased Nitro basic   |
+| Value        | Name          | Description                          |
+| ------------ | ------------- | ------------------------------------ |
+| 1 &lt;&lt; 0 | NITRO_CLASSIC | The user has purchased Nitro classic |
+| 1 &lt;&lt; 1 | NITRO         | The user has purchased regular Nitro |
+| 1 &lt;&lt; 2 | GUILD_BOOST   | The user has purchased a guild boost |
+| 1 &lt;&lt; 3 | NITRO_BASIC   | The user has purchased Nitro basic   |
 
 ###### Premium Usage Flags
 
 Premium usage flags denote what premium (Nitro) features a user has utilized.
 
-| Value  | Name                  | Description                                  |
-| ------ | --------------------- | -------------------------------------------- |
-| 1 << 0 | PREMIUM_DISCRIMINATOR | The user has utilized premium discriminators |
-| 1 << 1 | ANIMATED_AVATAR       | The user has utilized animated avatars       |
-| 1 << 2 | PROFILE_BANNER        | The user has utilized profile banners        |
+| Value        | Name                  | Description                                  |
+| ------------ | --------------------- | -------------------------------------------- |
+| 1 &lt;&lt; 0 | PREMIUM_DISCRIMINATOR | The user has utilized premium discriminators |
+| 1 &lt;&lt; 1 | ANIMATED_AVATAR       | The user has utilized animated avatars       |
+| 1 &lt;&lt; 2 | PROFILE_BANNER        | The user has utilized profile banners        |
 
 ###### Premium Type
 
